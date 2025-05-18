@@ -7,7 +7,7 @@ This repository provides computational methods to identify crystallographic plan
 
 Efficiently screen and identify exfoliable crystallographic planes through the following workflow:
 
-### 1. Simulate XRD Patterns
+### 1. Acquiring XRD Patterns through experiments or through simulation
 
 ```bash
 python simulate_xrd.py
