@@ -38,6 +38,10 @@ $$
 
 Planes exhibiting relatively low bond density $\rho$ are promising for exfoliation.
 
+### 4. Calculating Anisotropic Binding Strength
+
+For those crystallographic plane with low bond density. Use common density functional theory (DFT) software in combination with the Lobster package, to calculate bonding strengths and determine the differences between out-of-plane and in-plane bonding.
+
 ---
 
 ## Step-wise Exfoliation Procedure
