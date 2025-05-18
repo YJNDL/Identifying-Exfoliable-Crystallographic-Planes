@@ -8,12 +8,13 @@ This repository provides methods to identify promising crystallographic planes f
 ## Bond Density Evaluation and Plane Selection
 
 To efficiently screen and identify exfoliable crystallographic planes, the following steps are employed:
+````
 
 1. **Simulate XRD Patterns**
 
 ```bash
 python simulate_xrd.py
-````
+```
 
 2. **Identify Crystallographic Planes**
 
