@@ -75,8 +75,8 @@ E_{\text{exf}} = \sum \Delta E(j) \quad \text{when} \quad E_{i,1} \leq E_{i,0}
 
 ## Dependencies
 
-* Python 3.x
-* Required Python libraries:
+* Python 3.9~3.12
+* Required Python libraries: numpy scipy matplotlib pymatgen ase
 
 ```bash
 pip install numpy scipy matplotlib pymatgen ase
