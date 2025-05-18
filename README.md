@@ -11,7 +11,7 @@ To efficiently screen and identify exfoliable crystallographic planes, the follo
 
 1. **Simulate XRD Patterns**
 
-```bash
+```python
 python simulate_xrd.py
 ````
 
