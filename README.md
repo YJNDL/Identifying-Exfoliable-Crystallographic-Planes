@@ -2,10 +2,13 @@
 
 This repository provides methods to identify promising crystallographic planes for exfoliation in non-van der Waals (non-vdW) bulk materials by evaluating bond density and systematically performing structural exfoliation simulations.
 
+---
+
 ## Bond Density Evaluation and Plane Selection
 
 To efficiently screen and identify exfoliable crystallographic planes, the following steps are employed:
 
+---
 
 1. **Simulate XRD Patterns**
 
