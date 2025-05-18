@@ -1,83 +1,83 @@
 # Bond Density Evaluation and Crystallographic Plane Exfoliation
 
-This repository provides methods to identify promising crystallographic planes for exfoliation in non-van der Waals (non-vdW) bulk materials by evaluating bond density and systematically performing structural exfoliation simulations.
+This repository provides computational methods to identify crystallographic planes suitable for exfoliation from non-van der Waals (non-vdW) bulk materials by evaluating bond density and performing systematic structural exfoliation simulations.
 
 ---
 
 ## Bond Density Evaluation and Plane Selection
 
-To efficiently screen and identify exfoliable crystallographic planes, the following steps are employed:
+Efficiently screen and identify exfoliable crystallographic planes through the following workflow:
 
----
-
-1. **Simulate XRD Patterns**
+### 1. Simulate XRD Patterns
 
 ```bash
 python simulate_xrd.py
 ```
 
-2. **Identify Crystallographic Planes**
+### 2. Identify Crystallographic Planes
 
 ```bash
 python identify_planes.py
 ```
 
-3. **Bond Density Analysis**
+### 3. Bond Density Analysis
 
 ```bash
 python bond_density_scan.py
 ```
 
-Bond density $\rho$ is defined by:
+The bond density ($\rho$) is defined as:
 
-```math
+$$
 \rho = \frac{N(R_i, R_j)}{A}, \quad (i \neq j)
-```
+$$
 
-* $R$ represents the coordinates of neighboring atoms on opposite sides of the plane.
-* $N$ is the number of intersecting chemical bonds within one periodic unit.
-* $A$ is the planar area spanned by these bonding atoms.
+* $R$: Coordinates of neighboring atoms located on opposite sides of the plane.
+* $N$: Number of intersecting chemical bonds within one periodic unit.
+* $A$: Planar area spanned by these bonding atoms.
 
-Planes identified with relatively low $\rho$ values are considered promising for exfoliation.
+Planes exhibiting relatively low bond density $\rho$ are promising for exfoliation.
 
 ---
 
 ## Step-wise Exfoliation Procedure
 
-**Note:** *DFT-D3 van der Waals corrections are integrated into all exfoliation simulations.*
+> **Note:** DFT-D3 van der Waals corrections are integrated into all exfoliation simulations.
 
-Follow these steps to simulate exfoliation:
+Follow these detailed steps to simulate the exfoliation process:
 
-1. **Align Structure**
+### 1. Align Structure
 
-Rotate the structure such that the target exfoliation face aligns perpendicular to the c-axis.
+Rotate the crystal structure to align the targeted exfoliation plane perpendicular to the c-axis.
 
-2. **Stretch and Relax Structure**
+### 2. Stretch and Relax Structure
 
-Gradually stretch the lattice normal to the target plane, moving the outermost atomic layer approximately 0.2 Å per step. Relax the structure at each increment.
+Incrementally stretch the lattice normal to the exfoliation plane, moving the outermost atomic layer approximately 0.2 Å per step, followed by structural relaxation at each increment.
 
-Incremental energy change $\Delta E(j)$ is calculated by:
+The incremental energy change ($\Delta E(j)$) is computed as:
 
-```math
+$$
 \Delta E(j) = \frac{1}{A} \sum_{j \geq i \geq 0}(E_{i,1}-E_{i,0})
-```
+$$
 
-* $E_{i,0}$ is the instantaneous stable state energy at the initial state.
-* $E_{i,1}$ is the energy of the stretched and relaxed state.
-* $A$ is the area of the crystal face per unit period.
+* $E_{i,0}$: Instantaneous stable state energy at the initial configuration.
+* $E_{i,1}$: Energy of the stretched and subsequently relaxed configuration.
+* $A$: Area of the crystal face per unit periodicity.
 
-Exfoliation energy $E_{\text{exf}}$ is the sum of incremental energy changes, indicating the energy required to separate the layer:
+The exfoliation energy ($E_{\text{exf}}$) indicates the total energy required to separate layers:
 
-```math
+$$
 E_{\text{exf}} = \sum \Delta E(j) \quad \text{when} \quad E_{i,1} \leq E_{i,0}
-```
+$$
 
 ---
 
 ## Dependencies
 
-* Python 3.9~3.12
-* Required Python libraries: numpy scipy matplotlib pymatgen ase
+* Python version: 3.9–3.12
+* Required Python libraries: `numpy`, `scipy`, `matplotlib`, `pymatgen`, `ase`
+
+Install dependencies via:
 
 ```bash
 pip install numpy scipy matplotlib pymatgen ase
@@ -87,12 +87,10 @@ pip install numpy scipy matplotlib pymatgen ase
 
 ## References
 
-The methodologies herein incorporate established computational techniques and energy calculations as referenced in relevant literature (DFT-D3, etc.). Ensure proper referencing when utilizing this approach in publications.
+The methodologies used incorporate established computational techniques, including DFT-D3 for energy calculations. Please ensure proper referencing when using these methodologies in your publications.
 
 ---
 
 ## License
 
 This project is licensed under the MIT License.
-
-```
