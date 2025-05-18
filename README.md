@@ -8,10 +8,9 @@ Bond density evaluation and crystallographic plane selection
 
 	3) Use XXX.py to perform a bond density scan on the specified crystal planes obtained in Step 2.
 
-Step-wise exfoliation
+Step-wise exfoliation (Cautian! The DFT-D3 vdW corrections are considered during this process)
 
 	1) Rotate the structure so that the crystal face to be peeled faces the c-axis.
 		
 	2) Stretch the lattice along the direction normal to the crystal face, with the outermost atomic layer movement by ~0.2 Å at each step.
 
-	#Cautian! The DFT-D3 vdW51 corrections are considered during this process.
